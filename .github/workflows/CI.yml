@@ -39,7 +39,7 @@ jobs:
         shell: bash -e -l {0}
         run: |
             git clone https://github.com/lcompilers/lpython.git
-            git checkout 2293972e5ce377787d134541f8363ae441030b76
+            git checkout v0.20.0
 
       - name: Run LPython Ctest
         shell: bash -e -l {0}
