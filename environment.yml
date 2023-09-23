@@ -4,6 +4,6 @@ channels:
 dependencies:
   - python=3.10
   - lpython=0.20.0
-  - nodejs
-  - make
-  - cmake
+  - nodejs=18.12.1
+  - make=4.3
+  - cmake=3.25.2
