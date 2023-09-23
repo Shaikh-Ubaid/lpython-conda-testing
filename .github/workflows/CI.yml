@@ -35,6 +35,14 @@ jobs:
           variant: sccache
           key: ${{ github.job }}-${{ matrix.os }}
 
+      - name: GitHub add SSH Keys
+        shell: bash -e -l {0}
+        run: |
+          mkdir ~/.ssh
+          chmod 700 ~/.ssh
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          eval "$(ssh-agent -s)"
+
       - name: Clone LPython Source Repository
         shell: bash -e -l {0}
         run: |
