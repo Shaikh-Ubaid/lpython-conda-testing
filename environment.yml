@@ -1,0 +1,9 @@
+name: lf
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - lpython=0.19.0
+  - nodejs
+  - make
+  - cmake
