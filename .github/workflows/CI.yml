@@ -38,7 +38,14 @@ jobs:
       - name: Clone LPython Source Repository
         shell: bash -e -l {0}
         run: |
-            git clone https://github.com/lcompilers/lpython.git
+            mkdir ~/.ssh
+            chmod 700 ~/.ssh
+            ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
+            ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+            eval "$(ssh-agent -s)"
+
+            git clone git@github.com:lcompilers/lpython.git
             git fetch --tags -f
             git checkout v0.20.0
 
